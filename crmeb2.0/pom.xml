@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.6.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>com.zbkj</groupId>
+    <artifactId>crmeb</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>crmeb</name>
+    <description>Crmeb project for Spring Boot</description>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <springfox.version>2.9.2</springfox.version>
+        <swagger-models.version>1.5.22</swagger-models.version>
+        <swagger-bootstrap-ui.version>1.9.3</swagger-bootstrap-ui.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.alibaba.csp</groupId>
+            <artifactId>sentinel-transport-simple-http</artifactId>
+            <version>1.7.1</version>
+        </dependency>
+
+        <!-- spring  start  -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>5.2.5.RELEASE</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-commons</artifactId>
+        </dependency>
+        <!-- spring  end -->
+
+        <!-- spring-boot  start  -->
+        <!-- spring-boot 测试包  -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.junit.vintage</groupId>
+                    <artifactId>junit-vintage-engine</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!-- spring-boot 单元测试包  -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-test</artifactId>
+        </dependency>
+        <!-- spring-boot 外化配置和自动配置 https://www.jianshu.com/p/1ed18eebb299  -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-autoconfigure</artifactId>
+        </dependency>
+        <!--SpringBoot web应用依赖 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <!--SpringBoot 应用监控 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <!--SpringBoot 拦截 response 记录日志-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+        <!-- 开发阶段热部署 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <!-- spring-boot  end  -->
+
+        <!-- https://blog.csdn.net/sinat_25518349/article/details/85423209
+            Spring-cloud-context 引导程序应用上下文
+         -->
+        <!--        <dependency>-->
+        <!--            <groupId>org.springframework.cloud</groupId>-->
+        <!--            <artifactId>spring-cloud-context</artifactId>-->
+        <!--        </dependency>-->
+
+        <!-- JSTL for JSP  spring boot搭建web项目，
+            跳转到jsp一定要添加下面的jar包，
+            否则出现跳转的时候，
+            变成下载的功能，保存该页面。 start  -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-jasper</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-jsp-api</artifactId>
+        </dependency>
+        <!-- Spring Boot Redis 依赖 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+            <version>2.2.0.RELEASE</version>
+        </dependency>
+        <!-- JSTL for JSP  spring boot搭建web项目，
+            跳转到jsp一定要添加下面的jar包，
+            否则出现跳转的时候，
+            变成下载的功能，保存该页面。 end  -->
+
+        <!-- https://mvnrepository.com/artifact/com.alibaba/fastjson
+            https://www.cnblogs.com/li150dan/p/11016260.html
+            fastjson是由alibaba开源的一套json处理器。 -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.56</version>
+        </dependency>
+
+        <!--
+            https://blog.csdn.net/yanguo110/article/details/68944659/
+            添加 Alibaba 数据源 -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.1.20</version>
+        </dependency>
+
+        <!--访问mysql-->
+        <!--JDBC-->
+        <!-- MySql 5.5 Connector -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.6</version>
+        </dependency>
+
+        <!-- lombok-代码自动生成工具 -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- mybatis-plus 多数据源切换、操作  start -->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus</artifactId>
+            <version>3.3.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>3.3.1</version>
+        </dependency>
+        <!-- generator 代码生成器 https://www.jb51.net/article/183490.htm -->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-generator</artifactId>
+            <version>3.3.1</version>
+        </dependency>
+        <!-- mybatis-plus 多数据源切换、操作  end -->
+
+        <!-- 模板引擎 mybatis code generator时需要使用-->
+
+        <!-- junit4单元测试的jar包  -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- swagger  start -->
+        <!-- swagger doc - api文档 -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>${springfox.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>io.swagger</groupId>
+                    <artifactId>swagger-models</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!--swagger-->
+        <dependency>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-annotations</artifactId>
+            <version>1.5.21</version>
+        </dependency>
+        <dependency>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-models</artifactId>
+            <version>${swagger-models.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.xiaoymin</groupId>
+            <artifactId>swagger-bootstrap-ui</artifactId>
+            <version>${swagger-bootstrap-ui.version}</version>
+        </dependency>
+        <!-- swagger  end -->
+
+        <!-- Logback是由log4j创始人设计的另一个开源日志组件
+            https://www.cnblogs.com/warking/p/5710303.html  start -->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.logstash.logback</groupId>
+            <artifactId>logstash-logback-encoder</artifactId>
+            <version>5.3</version>
+        </dependency>
+        <!-- Logback是由log4j创始人设计的另一个开源日志组件
+            https://www.cnblogs.com/warking/p/5710303.html  end -->
+
+        <!-- redis 依赖 -->
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+
+        <!-- pagehelper 分页插件 -->
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper-spring-boot-starter</artifactId>
+            <version>1.2.5</version>
+            <!-- mybatis plus 和 pagehelper 冲突-->
+            <exclusions>
+                <exclusion>
+                    <groupId>org.mybatis</groupId>
+                    <artifactId>mybatis</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <!-- validation 注解校验参数
+            https://blog.csdn.net/qq_33655674/article/details/81509615
+         -->
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>1.1.0.Final</version>
+        </dependency>
+
+        <!--  Hutool 就是这么一款超级强力的工具类
+            https://how2j.cn/k/hutool/hutool-brief/1930.html#step8810
+            https://apidoc.gitee.com/loolly/hutool/
+         -->
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>5.5.4</version>
+        </dependency>
+
+        <!--HttpComponents 也就是以前的httpclient项目，可以用来提供高效的、最新的、功能丰富的支持 HTTP 协议的客户端/服务器编程工具包，并且它支持 HTTP 协议最新的版本和建议
+            https://blog.csdn.net/wjrong_1/article/details/51114233
+        -->
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.5.6</version>
+        </dependency>
+
+        <!-- Apache Commons start -->
+        <!-- 字符串操作
+            https://www.cnblogs.com/zuiyue_jing/p/12797417.html -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.5</version>
+        </dependency>
+        <!-- Apache Commons FileUpload -->
+        <dependency>
+            <groupId>commons-fileupload</groupId>
+            <artifactId>commons-fileupload</artifactId>
+            <version>1.3.3</version>
+        </dependency>
+        <!-- Apache Commons IO  -->
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.4</version>
+        </dependency>
+        <!-- Apache Commons end -->
+
+        <!-- poi 导出excel start -->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>4.1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>4.1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml-schemas</artifactId>
+            <version>4.1.2</version>
+        </dependency>
+        <!-- poi 导出excel end -->
+
+        <!-- thumbnailator 图片压缩工具 -->
+        <dependency>
+            <groupId>net.coobird</groupId>
+            <artifactId>thumbnailator</artifactId>
+            <version>0.4.8</version>
+        </dependency>
+
+        <!--阿里云oss上传-->
+        <dependency>
+            <groupId>com.aliyun.oss</groupId>
+            <artifactId>aliyun-sdk-oss</artifactId>
+            <version>3.5.0</version>
+        </dependency>
+
+        <!--腾讯云cos上传-->
+        <!--        <dependency>-->
+        <!--            <groupId>com.qcloud</groupId>-->
+        <!--            <artifactId>cos_api</artifactId>-->
+        <!--            <version>5.6.18</version>-->
+        <!--        </dependency>-->
+        <!--腾讯云COS-->
+        <dependency>
+            <groupId>com.qcloud</groupId>
+            <artifactId>cos_api</artifactId>
+            <version>5.6.22</version>
+        </dependency>
+
+        <!-- 七牛云 -->
+        <dependency>
+            <groupId>com.qiniu</groupId>
+            <artifactId>qiniu-java-sdk</artifactId>
+            <version>7.2.28</version>
+        </dependency>
+
+        <!--xml-->
+        <dependency>
+            <groupId>dom4j</groupId>
+            <artifactId>dom4j</artifactId>
+            <version>1.6.1</version>
+        </dependency>
+
+        <!-- java对象和xml文件之间的转换
+            https://blog.csdn.net/ant_ren/article/details/5901349 -->
+        <dependency>
+            <groupId>com.thoughtworks.xstream</groupId>
+            <artifactId>xstream</artifactId>
+            <version>1.4.10</version>
+        </dependency>
+
+        <!-- mongodb -->
+        <dependency>
+            <groupId>org.mongodb</groupId>
+            <artifactId>mongodb-driver-core</artifactId>
+            <version>3.8.2</version>
+        </dependency>
+
+        <!-- josn 转换对象 -->
+        <dependency>
+            <groupId>com.vaadin.external.google</groupId>
+            <artifactId>android-json</artifactId>
+            <version>0.0.20131108.vaadin1</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <!--图片上传-->
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpmime</artifactId>
+            <version>4.5.2</version>
+        </dependency>
+
+        <!--谷歌二维码-->
+        <dependency>
+            <groupId>com.google.zxing</groupId>
+            <artifactId>core</artifactId>
+            <version>3.3.3</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.zxing</groupId>
+            <artifactId>javase</artifactId>
+            <version>3.3.3</version>
+        </dependency>
+
+        <!--中文转拼音-->
+        <dependency>
+            <groupId>com.belerweb</groupId>
+            <artifactId>pinyin4j</artifactId>
+            <version>2.5.0</version>
+        </dependency>
+
+        <!--解析JWT-->
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt</artifactId>
+            <version>0.9.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.auth0</groupId>
+            <artifactId>jwks-rsa</artifactId>
+            <version>0.9.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>7.4.0</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <!-- gson -->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.8.5</version>
+        </dependency>
+
+        <!-- 支付宝开发-sdk -->
+        <dependency>
+            <groupId>com.alipay.sdk</groupId>
+            <artifactId>alipay-sdk-java</artifactId>
+            <version>4.16.54.ALL</version>
+        </dependency>
+
+        <!-- 表情转换 -->
+        <dependency>
+            <groupId>com.github.binarywang</groupId>
+            <artifactId>java-emoji-converter</artifactId>
+            <version>0.1.1</version>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <!-- spring-boot 打包配置-->
+        <finalName>Crmeb</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+
+        <resources>
+<!--            &lt;!&ndash;            <resource>&ndash;&gt;-->
+<!--            &lt;!&ndash;                <directory>src/main/resources</directory>&ndash;&gt;-->
+<!--            &lt;!&ndash;                &lt;!&ndash; 处理文件时替换文件中的变量 &ndash;&gt;&ndash;&gt;-->
+<!--            &lt;!&ndash;                <filtering>true</filtering>&ndash;&gt;-->
+<!--            &lt;!&ndash;                <excludes>&ndash;&gt;-->
+<!--            &lt;!&ndash;                    &lt;!&ndash; 打包时排除文件 &ndash;&gt;&ndash;&gt;-->
+<!--            &lt;!&ndash;&lt;!&ndash;                    <exclude>application.yml</exclude>&ndash;&gt;&ndash;&gt;-->
+<!--            &lt;!&ndash;                    <exclude>application-{profile}.yml</exclude>&ndash;&gt;-->
+<!--            &lt;!&ndash;&lt;!&ndash;                    <exclude>application-beta.yml</exclude>&ndash;&gt;&ndash;&gt;-->
+<!--            &lt;!&ndash;&lt;!&ndash;                    <exclude>application-prod.yml</exclude>&ndash;&gt;&ndash;&gt;-->
+<!--            &lt;!&ndash;                </excludes>&ndash;&gt;-->
+<!--            &lt;!&ndash;            </resource>&ndash;&gt;-->
+                <resource>
+                    <directory>src/main/resources</directory>
+                    <filtering>true</filtering>
+                </resource>
+
+<!--            &lt;!&ndash;            <resource>&ndash;&gt;-->
+<!--            &lt;!&ndash;                <directory>src/main/resources.${spring.profiles.active}</directory>&ndash;&gt;-->
+<!--            &lt;!&ndash;                <filtering>false</filtering>&ndash;&gt;-->
+<!--            &lt;!&ndash;            </resource>&ndash;&gt;-->
+<!--            &lt;!&ndash;这个元素描述了项目相关的所有资源路径列表，例如和项目相关的属性文件，这些资源被包含在最终的打包文件里。&ndash;&gt;-->
+                <resource>
+                    <!--   描述存放资源的目录，该路径相对POM路径-->
+                    <directory>src/main/java</directory>
+                    <includes>
+                        <include>**/*.xml</include>
+                    </includes>
+                </resource>
+        </resources>
+
+    </build>
+</project>
