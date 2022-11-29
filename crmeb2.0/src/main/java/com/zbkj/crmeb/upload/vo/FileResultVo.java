@@ -31,7 +31,8 @@ public class FileResultVo{
 
     @ApiModelProperty(value = "完整路径")
     private String path;
-
     @ApiModelProperty(value = "前缀")
     private String prefix;
+    @ApiModelProperty(value = "创作者用户ID标识")
+    private Integer uid;
 }

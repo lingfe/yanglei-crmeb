@@ -6,6 +6,8 @@ package com.constants;
  * @CreateDate: 2022/1/10 10:12
  */
 public class CategoryConstants {
+    /** 分类ID标识-首页推荐 = 999 */
+    public static final Integer CATEGORY_ID_INDEXTUIJIAN = 999;
 
     /** 分类状态-正常=1 */
     public static final Integer CATEGORY_STATUS_NORMAL = 1;

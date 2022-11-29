@@ -7,6 +7,8 @@ package com.constants;
 */
 public class SysGroupDataConstants {
 
+    /** 组合数据-公共-轮播图 = 206 */
+    public static final Integer GROUP_DATA_ID_PUBLIC_LBT=206;
     /** 中部推荐banner图 */
     public static final Integer GROUP_DATA_ID_INDEX_BEST_BANNER = 37;
     /** 首页banner滚动图 */

@@ -1,4 +1,4 @@
-package com.zbkj.crmeb.front.service.impl;
+package com.zbkj.crmeb.creator.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.common.PageParamRequest;
@@ -7,24 +7,24 @@ import com.exception.CrmebException;
 import com.github.pagehelper.PageHelper;
 import com.utils.DateUtil;
 import com.utils.UploadUtil;
-import com.utils.vo.DateLimitUtilVo;
+import com.utils.vo.dateLimitUtilVo;
 import com.zbkj.crmeb.category.model.Category;
 import com.zbkj.crmeb.category.service.CategoryService;
-import com.zbkj.crmeb.front.request.GetWorksListRequest;
-import com.zbkj.crmeb.front.response.CreatorDataResponse;
-import com.zbkj.crmeb.front.response.CreatorProfitDataResponse;
-import com.zbkj.crmeb.front.service.SystemAttachmentYwService;
-import com.zbkj.crmeb.front.service.UserCreatorService;
+import com.zbkj.crmeb.creator.model.UserProfit;
+import com.zbkj.crmeb.creator.request.GetWorksListRequest;
+import com.zbkj.crmeb.creator.response.CreatorDataResponse;
+import com.zbkj.crmeb.creator.response.CreatorProfitDataResponse;
+import com.zbkj.crmeb.creator.response.SystemAttachmentResponse;
+import com.zbkj.crmeb.creator.service.UserLikeService;
+import com.zbkj.crmeb.creator.service.CreatorUserService;
+import com.zbkj.crmeb.creator.service.UserProfitService;
 import com.zbkj.crmeb.pub.model.PublicTableField;
 import com.zbkj.crmeb.system.model.SystemAttachment;
 import com.zbkj.crmeb.system.request.SystemAttachmentSearchRequest;
-import com.zbkj.crmeb.system.response.SystemAttachmentResponse;
 import com.zbkj.crmeb.system.service.SystemAttachmentService;
 import com.zbkj.crmeb.upload.vo.FileResultVo;
-import com.zbkj.crmeb.user.model.SystemAttachmentYw;
+import com.zbkj.crmeb.creator.model.UserLike;
 import com.zbkj.crmeb.user.model.User;
-import com.zbkj.crmeb.user.model.UserProfit;
-import com.zbkj.crmeb.user.service.UserProfitService;
 import com.zbkj.crmeb.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -40,7 +40,7 @@ import java.util.*;
  * @CreateDate: 2022/7/15 9:37
  */
 @Service
-public class UserCreatorServiceImpl implements UserCreatorService {
+public class CreatorUserServiceImpl implements CreatorUserService {
 
     @Autowired
     private UserService userService;
@@ -52,7 +52,7 @@ public class UserCreatorServiceImpl implements UserCreatorService {
     private SystemAttachmentService systemAttachmentService;
 
     @Autowired
-    private SystemAttachmentYwService systemAttachmentYwService;
+    private UserLikeService systemAttachmentYwService;
 
     @Autowired
     private UserProfitService userProfitService;
@@ -131,12 +131,12 @@ public class UserCreatorServiceImpl implements UserCreatorService {
 
     @Override
     public Integer getAttachmentDownloads(Integer uid,Integer ywType,Integer attId,String date) {
-        LambdaQueryWrapper<SystemAttachmentYw> lqw=new LambdaQueryWrapper<>();
-        lqw.eq(SystemAttachmentYw::getUid,uid);
-        lqw.eq(SystemAttachmentYw::getYwType,ywType);
-        if(attId!=null)lqw.eq(SystemAttachmentYw::getAttid,attId);
+        LambdaQueryWrapper<UserLike> lqw=new LambdaQueryWrapper<>();
+        lqw.eq(UserLike::getUid,uid);
+        lqw.eq(UserLike::getYwType,ywType);
+        if(attId!=null)lqw.eq(UserLike::getAttid,attId);
         if(null != date){
-            DateLimitUtilVo dateLimit = DateUtil.getDateLimit(date);
+            dateLimitUtilVo dateLimit = DateUtil.getDateLimit(date);
             lqw.between(PublicTableField::getCreateTime, dateLimit.getStartTime(), dateLimit.getEndTime());
         }
         Integer sownloads = systemAttachmentYwService.count(lqw);
@@ -300,7 +300,7 @@ public class UserCreatorServiceImpl implements UserCreatorService {
         nowMoney = user.getNowMoney();
 
         //得到最近七天收益记录
-        DateLimitUtilVo dateLimitUtilVo = DateUtil.getDateLimit(Constants.SEARCH_DATE_LATELY_7);
+        dateLimitUtilVo dateLimitUtilVo = DateUtil.getDateLimit(Constants.SEARCH_DATE_LATELY_7);
         LambdaQueryWrapper<UserProfit> lqw=new LambdaQueryWrapper<>();
         lqw.eq(UserProfit::getUid,user.getUid());
         lqw.between(PublicTableField::getCreateTime,dateLimitUtilVo.getStartTime(),dateLimitUtilVo.getEndTime());

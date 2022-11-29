@@ -1,12 +1,12 @@
-package com.zbkj.crmeb.front.service;
+package com.zbkj.crmeb.creator.service;
 
 import com.common.PageParamRequest;
 import com.zbkj.crmeb.category.model.Category;
-import com.zbkj.crmeb.front.request.GetWorksListRequest;
-import com.zbkj.crmeb.front.response.CreatorDataResponse;
-import com.zbkj.crmeb.front.response.CreatorProfitDataResponse;
+import com.zbkj.crmeb.creator.request.GetWorksListRequest;
+import com.zbkj.crmeb.creator.response.CreatorDataResponse;
+import com.zbkj.crmeb.creator.response.CreatorProfitDataResponse;
+import com.zbkj.crmeb.creator.response.SystemAttachmentResponse;
 import com.zbkj.crmeb.system.request.SystemAttachmentSearchRequest;
-import com.zbkj.crmeb.system.response.SystemAttachmentResponse;
 import com.zbkj.crmeb.upload.vo.FileResultVo;
 import com.zbkj.crmeb.user.model.User;
 import org.springframework.web.multipart.MultipartFile;
@@ -20,7 +20,7 @@ import java.util.Map;
  * @author: 零风
  * @CreateDate: 2022/7/15 9:36
  */
-public interface UserCreatorService {
+public interface CreatorUserService {
 
     /**
      * 得到作品分类

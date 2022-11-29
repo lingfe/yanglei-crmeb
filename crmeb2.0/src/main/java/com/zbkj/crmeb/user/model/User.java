@@ -26,6 +26,13 @@ import java.util.Date;
 @ApiModel(value="User-用户表", description="用户表")
 public class User implements Serializable {
 
+    @ApiModelProperty(value = "口令")
+    private Integer code;
+    @ApiModelProperty(value = "曝光单价")
+    private BigDecimal unitPrice;
+    @ApiModelProperty(value = "支付账号")
+    private String alipay;
+
     private static final long serialVersionUID=1L;
 
     @ApiModelProperty(value = "用户id")

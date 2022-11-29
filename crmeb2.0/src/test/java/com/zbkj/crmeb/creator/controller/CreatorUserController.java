@@ -1,14 +1,14 @@
-package com.zbkj.crmeb.front.controller;
+package com.zbkj.crmeb.creator.controller;
 
 import com.common.CommonPage;
 import com.common.CommonResult;
 import com.common.PageParamRequest;
 import com.utils.CrmebUtil;
-import com.zbkj.crmeb.front.request.GetWorksListRequest;
-import com.zbkj.crmeb.front.response.CreatorDataResponse;
-import com.zbkj.crmeb.front.response.CreatorProfitDataResponse;
-import com.zbkj.crmeb.front.service.UserCreatorService;
-import com.zbkj.crmeb.system.response.SystemAttachmentResponse;
+import com.zbkj.crmeb.creator.request.GetWorksListRequest;
+import com.zbkj.crmeb.creator.response.CreatorDataResponse;
+import com.zbkj.crmeb.creator.response.CreatorProfitDataResponse;
+import com.zbkj.crmeb.creator.response.SystemAttachmentResponse;
+import com.zbkj.crmeb.creator.service.CreatorUserService;
 import com.zbkj.crmeb.system.service.SystemAttachmentService;
 import com.zbkj.crmeb.upload.vo.FileResultVo;
 import io.swagger.annotations.Api;
@@ -32,12 +32,12 @@ import java.util.Map;
  */
 @Slf4j
 @RestController("UserCreatorController")
-@RequestMapping("api/front/userCreator")
+@RequestMapping("api/front/creator/userCreator")
 @Api(tags = "创作者用户")
-public class UserCreatorController {
+public class CreatorUserController {
 
     @Autowired
-    private UserCreatorService userCreatorService;
+    private CreatorUserService userCreatorService;
 
     @Autowired
     private SystemAttachmentService systemAttachmentService;

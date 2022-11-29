@@ -24,6 +24,9 @@ import java.util.Date;
 @ApiModel(value="SystemAttachment对象", description="附件管理表")
 public class SystemAttachment implements Serializable {
 
+    @ApiModelProperty(value = "是否置顶")
+    private Boolean isTop;
+
     private static final long serialVersionUID=1L;
 
     @TableId(value = "att_id", type = IdType.AUTO)

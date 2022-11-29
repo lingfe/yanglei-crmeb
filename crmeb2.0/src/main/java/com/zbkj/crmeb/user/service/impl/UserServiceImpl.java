@@ -3396,6 +3396,15 @@ public class UserServiceImpl extends ServiceImpl<UserDao, User> implements UserS
     }
 
     @Override
+    public User getUserException(Integer uid) {
+        User user= userDao.selectById(uid);
+        if(user == null){
+            throw new CrmebException("该用户不存在！");
+        }
+        return user;
+    }
+
+    @Override
     public Map<String, Object> sms(UserSmsRequest request) {
         Map<String, Object> map=new HashMap<>();
         List<String> phons=Arrays.asList(request.getUidsOrPhons().split(","));

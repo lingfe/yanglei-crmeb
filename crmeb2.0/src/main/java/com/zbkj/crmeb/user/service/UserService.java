@@ -521,4 +521,12 @@ public interface UserService extends IService<User> {
      */
     Map<String,Object> sms(UserSmsRequest request);
 
+    /**
+     * 根据用户ID得到用户信息-带异常
+     * @param uid 用户表ID标识
+     * @Author 零风
+     * @Date  2022/7/7 14:30
+     * @return
+     */
+    User getUserException(Integer uid);
 }

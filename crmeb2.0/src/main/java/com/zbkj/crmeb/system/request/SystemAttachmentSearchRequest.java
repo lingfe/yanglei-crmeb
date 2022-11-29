@@ -19,4 +19,10 @@ public class SystemAttachmentSearchRequest {
     @ApiModelProperty(value = "关键字")
     private String keywords;
 
+    @ApiModelProperty(value = "用户表ID标识")
+    private Integer uid;
+    @ApiModelProperty(value = "用户标签表ID标识")
+    private Integer tagId;
+    @ApiModelProperty(value = "状态:-1=全部、0=审核中、1=通过、2=不通过")
+    private Integer status;
 }

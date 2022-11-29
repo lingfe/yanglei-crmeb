@@ -1,4 +1,4 @@
-package com.zbkj.crmeb.user.model;
+package com.zbkj.crmeb.creator.model;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.zbkj.crmeb.pub.model.PublicTableField;
@@ -20,7 +20,7 @@ import java.io.Serializable;
 @Accessors(chain = true)
 @TableName("eb_system_attachment_yw")
 @ApiModel(value="SystemAttachmentYw-附件业务表", description="附件业务表")
-public class SystemAttachmentYw extends PublicTableField implements Serializable {
+public class UserLike extends PublicTableField implements Serializable {
 
     private static final long serialVersionUID=1L;
 
