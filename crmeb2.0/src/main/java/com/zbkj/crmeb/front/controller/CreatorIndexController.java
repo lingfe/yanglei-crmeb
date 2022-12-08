@@ -1,4 +1,4 @@
-package com.zbkj.crmeb.creator.controller;
+package com.zbkj.crmeb.front.controller;
 
 
 import com.common.CommonPage;
@@ -34,9 +34,9 @@ import java.util.List;
  * @CreateDate: 2022/1/11 9:57
  */
 @Slf4j
-@RestController("IndexController")
+@RestController("CreatorIndexController")
 @RequestMapping("api/front/creator/index/")
-@Api(tags = "首页")
+@Api(tags = "创作者-首页")
 public class CreatorIndexController {
 
     @Autowired
@@ -48,14 +48,14 @@ public class CreatorIndexController {
      * @Date  2022/8/11 10:12
      */
     public static void main(String[] args) {
-        String name= "邹洁";
+        String name= "test";
         System.out.print("\n\t\t\t\t\t\t");
         Thread obj = new Thread(new Runnable() {
             @SneakyThrows
             @Override
             public void run() {
                 for (int i = 0; i < name.length(); i++) {
-                    System.out.print(name.substring(i));
+                    System.out.print(name.substring(i,(i+1)));
                     Thread.sleep(1000);
                 }
 

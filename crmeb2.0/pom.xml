@@ -451,6 +451,10 @@
             <artifactId>java-emoji-converter</artifactId>
             <version>0.1.1</version>
         </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
 
     </dependencies>
 

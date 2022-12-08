@@ -1,4 +1,4 @@
-package com.zbkj.crmeb.creator.controller;
+package com.zbkj.crmeb.front.controller;
 
 import com.common.CommonPage;
 import com.common.CommonResult;
@@ -33,7 +33,7 @@ import java.util.Map;
 @Slf4j
 @RestController("UserCreatorController")
 @RequestMapping("api/front/creator/userCreator")
-@Api(tags = "创作者用户")
+@Api(tags = "创作者-用户")
 public class CreatorUserController {
 
     @Autowired

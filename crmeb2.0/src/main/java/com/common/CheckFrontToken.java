@@ -83,7 +83,14 @@ public class CheckFrontToken {
                 "api/front/brands/getCateIdList",
                 "api/front/brands/get/getBrandsPreferredInfo",
                 "api/front/userLogin",
-                "api/front/login/app/iosAccountLogin"
+                "api/front/login/app/iosAccountLogin",
+                "api/front/creator/index/indexData",
+                "api/front/creator/index/indexSearch",
+                "api/front/creator/index/infoCreatorHome",
+                "api/front/creator/index/whereCategoryScreenCreatorWorksList",
+                "api/front/creator/index/download",
+                "api/front/creator/index/attid",
+                "api/front/creator/index/login",
         };
         return ArrayUtils.contains(routerList, uri);
     }
